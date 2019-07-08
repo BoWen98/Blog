@@ -1,0 +1,30 @@
+server:
+  port: 9001
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123
+    initial-size: 1
+    min-idle: 1
+    max-active: 20
+    test-on-borrow: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  thymeleaf:
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  main:
+    allow-bean-definition-overriding: true
+mybatis:
+  type-aliases-package: com.bowen.blog.entity
+  mapper-locations: classpath:mapper/*.xml
+img:
+  location: D:/upload/

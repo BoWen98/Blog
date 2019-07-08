@@ -1,0 +1,26 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+index
+<p>拥有的角色：
+    <span sec:authorize="hasRole('ROLE_ADMIN')">管理员</span>
+    <span sec:authorize="hasRole('ROLE_USER')">用户</span>
+</p>
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+    ROLE_ADMIN
+</div>
+<div sec:authorize="hasRole('ROLE_USER')">
+    ROLE_USER
+</div>
+</body>
+</html>
